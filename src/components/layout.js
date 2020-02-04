@@ -1,6 +1,6 @@
 import React from "react"
 import { css } from "@emotion/core"
-import { useStaticQuery, Link, graphql } from "gatsby"
+import { Link, graphql } from "gatsby"
 import Img from "gatsby-image"
 import { rhythm } from "../utils/typography"
 export default ({ data }) => (
@@ -86,8 +86,8 @@ export default ({ data }) => (
 )
 
 export const query = graphql`
-      query {
-        file(relativePath: ({ eq: "icon.png" }) {
+  query {
+    file(relativePath: { eq: "icon.png" }) {
       childImageSharp {
         # Specify the image processing specifications right in the query.
         # Makes it trivial to update as your page's design changes.
@@ -96,4 +96,5 @@ export const query = graphql`
         }
       }
     }
-    `
+  }
+`

@@ -22,7 +22,7 @@ export const query = graphql`
     #     title
     #   }
     # }
-    file(relativePath: { eq: "src/images/img1.jpeg" }) {
+    file(relativePath: { eq: "IMG-8430a959012ac9f68940b86729473b66-V.jpg" }) {
       childImageSharp {
         # Specify the image processing specifications right in the query.
         # Makes it trivial to update as your page's design changes.

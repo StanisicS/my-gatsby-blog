@@ -9,9 +9,9 @@ export default ({ data }) => (
     <h1>About me</h1>
     <p>
       We're the only site running on your computer dedicated to showing the best
-      photos and videos of pandas eating lots of food.
+      photos and videos of /pandas eating lots of food.
     </p>
-    <Img fixed={data.file.childImageSharp.fixed} />
+    <Img fluid={data.file.childImageSharp.fluid} />
   </Layout>
 )
 
@@ -26,8 +26,8 @@ export const query = graphql`
       childImageSharp {
         # Specify the image processing specifications right in the query.
         # Makes it trivial to update as your page's design changes.
-        fixed(width: 125) {
-          ...GatsbyImageSharpFixed
+        fluid(maxWidth: 700) {
+          ...GatsbyImageSharpFluid
         }
       }
     }

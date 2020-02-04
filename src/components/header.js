@@ -1,6 +1,7 @@
 import React, { useState } from "react"
-import { Link } from "gatsby"
+import { useStaticQuery, Link, graphql } from "gatsby"
 import PropTypes from "prop-types"
+import { css } from "@emotion/core"
 
 function Header({ siteTitle }) {
   const [isExpanded, toggleExpansion] = useState(false)

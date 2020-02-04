@@ -64,7 +64,6 @@ export default () => {
           <ListLink to="/contact/">Contact</ListLink>
         </ul>
       </header>
-      {children}
     </div>
   )
 }

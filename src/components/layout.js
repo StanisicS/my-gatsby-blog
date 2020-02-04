@@ -47,7 +47,7 @@ export default ({ data }) => (
           letter-spacing: -0.025em;
         `}
       >
-        {data.site.siteMetadata.title}
+        My Gatsby Blog
       </span>
       <div
         css={css`
@@ -141,11 +141,11 @@ export default ({ data }) => (
 
 export const query = graphql`
   query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
+    # site {
+    #   siteMetadata {
+    #     title
+    #   }
+    # }
     file(relativePath: { eq: "icon.png" }) {
       childImageSharp {
         fixed(width: 75, height: 75) {

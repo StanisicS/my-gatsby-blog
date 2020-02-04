@@ -19,11 +19,6 @@ export default ({ data }) => (
 
 export const query = graphql`
   query {
-    # site {
-    #   siteMetadata {
-    #     title
-    #   }
-    # }
     file(relativePath: { eq: "IMG-df8f844d69e4b31b9a072bedd9cc4b2e-V.jpg" }) {
       childImageSharp {
         # Specify the image processing specifications right in the query.

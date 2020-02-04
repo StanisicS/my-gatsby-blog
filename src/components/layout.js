@@ -12,13 +12,6 @@ import { Link, graphql } from "gatsby"
 // )
 
 export default ({ data }) => (
-  // css={css`
-  box-sizing: border-box;
-  margin: 0 auto;
-  max-width: 700px;
-  padding: 0 ${rhythm(1)};
-  /* padding-top: ${rhythm(1.5)}; */
-  //   `}
   <div
     css={css`
       display: flex;

@@ -17,8 +17,8 @@ export default ({ data }) => (
       css={css`
           width: 100%;
           /* margin-bottom: ${rhythm(1)}; */
-          background-color: darkgreen;
-         padding-left: 0;
+          background-color: #554A35;
+          padding-left: 0;
           /* padding-right: 10px; */
           display: flex;
           justify-content: space-between;
@@ -39,10 +39,10 @@ export default ({ data }) => (
           <Link to={"/"} style={{ paddingLeft: "0", paddingTop: "10px" }}>
             <Img
               fixed={data.file.childImageSharp.fixed}
-              css={css`
-                display: inline-block;
-                font-style: normal;
-              `}
+              // css={css`
+              //   display: inline-block;
+              //   font-style: normal;
+              // `}
             />
           </Link>
         </li>
@@ -91,7 +91,7 @@ export const query = graphql`
       childImageSharp {
         # Specify the image processing specifications right in the query.
         # Makes it trivial to update as your page's design changes.
-        fixed(width: 80) {
+        fixed(width: 80, height: 80) {
           ...GatsbyImageSharpFixed
         }
       }

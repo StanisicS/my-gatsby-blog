@@ -13,7 +13,7 @@ const ListLink = props => (
 
 export default ({ data }) => {
   return (
-    <nav
+    <div
       // css={css`
       //     box-sizing: border-box;
       //     margin: 0 auto;
@@ -32,7 +32,7 @@ export default ({ data }) => {
         padding: 0 1rem;
       `}
     >
-      <div
+      <nav
         // css={css`
         //     width: 100%;
         //     /* margin-bottom: ${rhythm(1)}; */
@@ -159,8 +159,9 @@ export default ({ data }) => {
             </ListLink>
           </div>
         </div>
-      </div>
-    </nav>
+      </nav>
+      {children}
+    </div>
   )
 }
 

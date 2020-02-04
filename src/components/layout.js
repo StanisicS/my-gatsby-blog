@@ -19,6 +19,10 @@ export default ({ children }) => {
     <div
       css={css`
         box-sizing: border-box;
+        margin: 0 auto;
+        max-width: 700px;
+        padding: ${rhythm(3)};
+        padding-top: ${rhythm(1.5)};
       `}
     >
       <header
@@ -46,10 +50,8 @@ export default ({ children }) => {
             <Link
               to={"/"}
               style={{
-                display: inlineBlock,
+                display: "inlineBlock",
                 padding: "10px 15px",
-                textDecoration: none,
-                color: white,
               }}
             >
               <h3

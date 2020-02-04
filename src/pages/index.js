@@ -7,7 +7,11 @@ import Layout from "../components/layout"
 export default ({ data }) => {
   return (
     <Layout>
-      <div>
+      <div
+      css={css`
+      padding: 5px;
+      `}
+      >
         <h1
           css={css`
             display: inline-block;

@@ -4,6 +4,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import tw from "tailwind.macro"
 import styled from "@emotion/styled"
 import Header from "./header"
+import "./layout.css"
 import background from "../../static/IMG-8430a959012ac9f68940b86729473b66-V.jpg"
 
 // const Layout = ({ children }) => {
@@ -45,11 +46,7 @@ import background from "../../static/IMG-8430a959012ac9f68940b86729473b66-V.jpg"
 // export default Layout
 
 const PageContainer = styled.div`
-    ${tw`
-        bg-gray-200 text-xl w-1/2
-    `}
-    background-image: url(${background});
-    padding: 10px;
+  ${tw`container mx-auto`}
 `
 
 const Layout = ({ children }) => <PageContainer>{children}</PageContainer>

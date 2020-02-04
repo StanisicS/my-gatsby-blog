@@ -1,5 +1,6 @@
-import React from "react"
 import React, { useState } from "react"
+import { Link } from "gatsby"
+import PropTypes from "prop-types"
 
 function Header({ siteTitle }) {
   const [isExpanded, toggleExpansion] = useState(false)
@@ -22,7 +23,7 @@ function Header({ siteTitle }) {
           // marginBottom: 1.5rem;
           display: flex;
           flex-shrink: 0;
-          color: white;
+          color: #fff;
           margin-right: 3rem;
         `}
       >
@@ -50,7 +51,7 @@ function Header({ siteTitle }) {
             letter-spacing: -0.025em;
           `}
         >
-          My Gatsby Blog
+          {siteTitle}
         </span>
       </div>
       <div
@@ -71,7 +72,7 @@ function Header({ siteTitle }) {
             border-radius: 0.25rem;
             color: #b2f5ea;
             &:hover': {
-               color: white;
+               color: #fff;
                border-color: #fff;
                 }
           `}
@@ -107,7 +108,7 @@ function Header({ siteTitle }) {
             }
           `}
         >
-          <ListLink
+          <Link
             to="/"
             href="#responsive-header"
             css={css`
@@ -119,14 +120,14 @@ function Header({ siteTitle }) {
                 }
                 color: #b2f5ea;
                   &:hover': {
-                    color: white
+                    color: #fff
                 };
                 margin-right: 1rem;
             `}
           >
             Home
-          </ListLink>
-          <ListLink
+          </Link>
+          <Link
             to="/about/"
             css={css`
                 display: block;
@@ -137,14 +138,14 @@ function Header({ siteTitle }) {
                   }
                 color: #b2f5ea;
                   &:hover': {
-                    color: white
+                    color: #fff
                   };
                 margin-right: 1rem;
             `}
           >
             About
-          </ListLink>
-          <ListLink
+          </Link>
+          <Link
             to="/contact/"
             css={css`
                 display: block;
@@ -155,17 +156,51 @@ function Header({ siteTitle }) {
                 }
                 color: #b2f5ea;
                   &:hover': {
-                    color: white
+                    color: #fff
                   };
                 margin-right: 1rem;
             `}
           >
             Contact
-          </ListLink>
+          </Link>
+        </div>
+        <div>
+          <a
+            href="#download"
+            css={css`
+                display: inline-block;
+                font-size: .875rem;
+                padding: 0.5rem 1rem;
+                line-height: 1;
+                border-width: 1px;
+                border-radius: 0.25rem;
+                color: #fff;
+                border-color: #fff;
+                  &:hover': {
+                    border-color: transparent;
+                    color: #38b2ac;
+                      background-color: #fff;
+                    };
+                    margin-top: 1rem;
+                @media (min-width: 1024px) {
+                  margin-top: 0;
+                }
+            `}
+          >
+            Download
+          </a>
         </div>
       </div>
     </nav>
   )
 }
 
-export default props => <h1>{props.headerText}</h1>
+Header.propTypes = {
+  siteTitle: PropTypes.string,
+}
+
+Header.defaultProps = {
+  siteTitle: ``,
+}
+
+export default Header

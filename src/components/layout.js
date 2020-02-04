@@ -6,9 +6,9 @@ import styled from "@emotion/styled"
 import Header from "./header"
 import "./layout.css"
 
-const PageContainer = styled.div`
-  ${tw`container mx-auto`}
-`
+// const PageContainer = styled.div`
+//   ${tw`container mx-auto`}
+// `
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -22,18 +22,16 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <>
-      <PageContainer>
-        <Header siteTitle={data.site.siteMetadata.title} />
+    <div className="container mx-auto">
+      <Header siteTitle={data.site.siteMetadata.title} />
 
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
-      </PageContainer>
-    </>
+      <main>{children}</main>
+      <footer>
+        © {new Date().getFullYear()}, Built with
+        {` `}
+        <a href="https://www.gatsbyjs.org">Gatsby</a>
+      </footer>
+    </div>
   )
 }
 //       <div

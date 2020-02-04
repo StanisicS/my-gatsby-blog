@@ -26,8 +26,12 @@ export const query = graphql`
       childImageSharp {
         # Specify the image processing specifications right in the query.
         # Makes it trivial to update as your page's design changes.
-        fluid(maxWidth: 700) {
-          ...GatsbyImageSharpFluid_noBase64
+        fluid {
+          aspectRatio
+          base64
+          sizes
+          src
+          srcSet
         }
       }
     }

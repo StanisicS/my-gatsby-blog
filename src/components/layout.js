@@ -1,8 +1,9 @@
 import React from "react"
-import { css } from "@emotion/core"
+// import { css } from "@emotion/core"
 import { useStaticQuery, Link, graphql } from "gatsby"
 // import Img from "gatsby-image"
-import { rhythm } from "../utils/typography"
+// import { rhythm } from "../utils/typography"
+import SEO from "../components/seo"
 
 const ListLink = props => (
   <li style={{ display: `inline-block`, marginRight: `1rem` }}>

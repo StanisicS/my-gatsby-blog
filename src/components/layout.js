@@ -22,9 +22,8 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto my-12 max-w-2xl py-0 px-4">
       <Header siteTitle={data.site.siteMetadata.title} />
-
       <main>{children}</main>
       <footer>
         © {new Date().getFullYear()}, Built with

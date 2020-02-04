@@ -14,7 +14,7 @@ const ListLink = props => (
 export default () => {
   const data = useStaticQuery(graphql`
     query {
-      file(relativePath: { eq: "headers/default.jpg" }) {
+      file(relativePath: { eq: "icon.png" }) {
         childImageSharp {
           fixed(width: 125, height: 125) {
             ...GatsbyImageSharpFixed

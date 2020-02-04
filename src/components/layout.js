@@ -1,18 +1,21 @@
 import React from "react"
 import { css } from "@emotion/core"
 import { useStaticQuery, Link, graphql } from "gatsby"
-
+import Img from "gatsby-image"
 import { rhythm } from "../utils/typography"
 export default ({ children }) => {
   const data = useStaticQuery(
     graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-          }
+      query myQuery2 {
+        file(relativePath: { eq: "icon.png" }) {
+      childImageSharp {
+        # Specify the image processing specifications right in the query.
+        # Makes it trivial to update as your page's design changes.
+        fixed(width: 80) {
+          ...GatsbyImageSharpFixed
         }
       }
+    }
     `
   )
   return (
@@ -48,15 +51,14 @@ export default ({ children }) => {
               display: flex;
             `}
           >
-            <Link to={"/"} style={{ paddingLeft: "0" }}>
-              <h3
+            <Link to={"/"} style={{ paddingLeft: "0", paddingTop: "10px" }}>
+              <Img
+                fixed={data.file.childImageSharp.fixed}
                 css={css`
                   display: inline-block;
                   font-style: normal;
                 `}
-              >
-                {data.site.siteMetadata.title}
-              </h3>
+              />
             </Link>
           </li>
           <li

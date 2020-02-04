@@ -11,7 +11,7 @@ const ListLink = props => (
   </li>
 )
 
-export default ({ data }) => {
+export default ({ children }) => {
   return (
     <div
       // css={css`

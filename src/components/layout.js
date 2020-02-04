@@ -21,7 +21,7 @@ export default ({ children }) => {
         box-sizing: border-box;
         margin: 0 auto;
         max-width: 700px;
-        padding: ${rhythm(2)};
+        padding: ${rhythm(1.5)};
         padding-top: ${rhythm(1.5)};
       `}
     >

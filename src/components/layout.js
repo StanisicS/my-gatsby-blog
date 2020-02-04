@@ -11,56 +11,59 @@ const ListLink = props => (
   </li>
 )
 
-export default ({ children }) => {
-  const data = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
+export default () => {
+  const data = useStaticQuery(graphql`
+    query {
+      file(relativePath: { eq: "headers/default.jpg" }) {
+        childImageSharp {
+          fixed(width: 125, height: 125) {
+            ...GatsbyImageSharpFixed
           }
         }
       }
-    `
-  )
+    }
+  `)
 
-  return (
-    <div
+  return
+  ;<div
+    // css={css`
+    //     box-sizing: border-box;
+    //     margin: 0 auto;
+    //     max-width: 700px;
+    //     padding: 0 ${rhythm(1)};
+    //     /* padding-top: ${rhythm(1.5)}; */
+    //   `}
+    style={{ margin: `3rem auto`, maxWidth: 650, padding: `0 1rem` }}
+  >
+    <header
       // css={css`
-      //     box-sizing: border-box;
-      //     margin: 0 auto;
-      //     max-width: 700px;
-      //     padding: 0 ${rhythm(1)};
-      //     /* padding-top: ${rhythm(1.5)}; */
+      //     width: 100%;
+      //     /* margin-bottom: ${rhythm(1)}; */
+      //     background-color: #554A35;
+      //     padding-left: 0;
+      //     /* padding-right: 10px; */
+      //     display: flex;
+      //     justify-content: space-between;
+      //     align-items: center;
       //   `}
-      style={{ margin: `3rem auto`, maxWidth: 650, padding: `0 1rem` }}
+      style={{ marginBottom: `1.5rem` }}
     >
-      <header
-        // css={css`
-        //     width: 100%;
-        //     /* margin-bottom: ${rhythm(1)}; */
-        //     background-color: #554A35;
-        //     padding-left: 0;
-        //     /* padding-right: 10px; */
-        //     display: flex;
-        //     justify-content: space-between;
-        //     align-items: center;
-        //   `}
-        style={{ marginBottom: `1.5rem` }}
+      <Link to="/" style={{ textShadow: `none`, backgroundImage: `none` }}>
+        <h3 style={{ display: `inline` }}>
+          <div>
+            <Img fixed={data.file.childImageSharp.fixed} />
+          </div>
+        </h3>
+      </Link>
+      <ul
+        //
+        style={{ listStyle: `none`, float: `right` }}
       >
-        <Link to="/" style={{ textShadow: `none`, backgroundImage: `none` }}>
-          <h3 style={{ display: `inline` }}>{data.site.siteMetadata.title}</h3>
-        </Link>
-        <ul
-          //
-          style={{ listStyle: `none`, float: `right` }}
-        >
-          <ListLink to="/">Home</ListLink>
-          <ListLink to="/about/">About</ListLink>
-          <ListLink to="/contact/">Contact</ListLink>
-        </ul>
-      </header>
-      {children}
-    </div>
-  )
+        <ListLink to="/">Home</ListLink>
+        <ListLink to="/about/">About</ListLink>
+        <ListLink to="/contact/">Contact</ListLink>
+      </ul>
+    </header>
+    {children}
+  </div>
 }

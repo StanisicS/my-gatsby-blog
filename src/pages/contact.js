@@ -4,12 +4,14 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Img from "gatsby-image"
 
-export default () => (
+export default ({ data }) => (
   <Layout>
     <SEO title="Contact" />
     <h1>I'd love to talk! Email me at the address below</h1>
     <p>
-      <a href="mailto:me@example.com">me@example.com</a>
+      <a href="mailto:stevan.stanisic@outlook.com">
+        stevan.stanisic@outlook.com
+      </a>
     </p>
     <Img fluid={data.file.childImageSharp.fluid} />
   </Layout>

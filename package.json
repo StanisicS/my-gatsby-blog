@@ -1,7 +1,7 @@
 {
-  "name": "gatsby-starter-hello-world",
+  "name": "initial-sandbox",
   "private": true,
-  "description": "A simplified bare-bones starter for Gatsby",
+  "description": "",
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
@@ -43,5 +43,6 @@
   },
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
-  }
+  },
+  "keywords": []
 }

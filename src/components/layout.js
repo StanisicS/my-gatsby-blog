@@ -18,17 +18,7 @@ export default ({ data }) => (
       padding: 0 1rem;
     `}
   >
-      {/* css={css` */}
-      {/* width: 100%; */}
-      {/* /* margin-bottom: ${rhythm(1)}; */ */}
-      {/* background-color: #554A35; */}
-      {/* padding-left: 0; */}
-      {/* /* padding-right: 10px; */ */}
-      {/* display: flex; */}
-      {/* justify-content: space-between; */}
-      {/* align-items: center; */}
-      {/* `} */}
-      <nav
+    <nav
       css={css`
         // marginBottom: 1.5rem;
         display: flex;

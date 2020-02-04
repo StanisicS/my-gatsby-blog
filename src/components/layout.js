@@ -13,7 +13,7 @@ const ListLink = props => (
 
 export default ({ children }) => {
   return (
-    <div
+    <nav
       // css={css`
       //     box-sizing: border-box;
       //     margin: 0 auto;
@@ -32,7 +32,7 @@ export default ({ children }) => {
         padding: 0 1rem;
       `}
     >
-      <nav
+      <div
         // css={css`
         //     width: 100%;
         //     /* margin-bottom: ${rhythm(1)}; */
@@ -68,7 +68,6 @@ export default ({ children }) => {
             fill="black"
           />
         </svg>
-
         <span
           css={css`
             font-weight: semi-bold;
@@ -108,9 +107,10 @@ export default ({ children }) => {
           //
           style={{ listStyle: `none`, float: `right` }}
         > */}
-            <ListLink
-              to="/"
-              css={css`
+            <ul style={{ listStyle: `none`, float: `right` }}>
+              <ListLink
+                to="/"
+                css={css`
                 display: block;
                 margin-top: 1rem;
                 @media (min-width: 1024px) {
@@ -123,12 +123,12 @@ export default ({ children }) => {
                 };
                 margin-right: 1rem;
             `}
-            >
-              Home
-            </ListLink>
-            <ListLink
-              to="/about/"
-              css={css`
+              >
+                Home
+              </ListLink>
+              <ListLink
+                to="/about/"
+                css={css`
                 display: block;
                 margin-top: 1rem;
                 @media (min-width: 1024px) {
@@ -141,12 +141,12 @@ export default ({ children }) => {
                   };
                 margin-right: 1rem;
             `}
-            >
-              About
-            </ListLink>
-            <ListLink
-              to="/contact/"
-              css={css`
+              >
+                About
+              </ListLink>
+              <ListLink
+                to="/contact/"
+                css={css`
                 display: block;
                 margin-top: 1rem;
                 @media (min-width: 1024px) {
@@ -159,30 +159,31 @@ export default ({ children }) => {
                   };
                 margin-right: 1rem;
             `}
-            >
-              Contact
-            </ListLink>
+              >
+                Contact
+              </ListLink>
+            </ul>
           </div>
         </div>
-      </nav>
-      {children}
-    </div>
+      </div>
+      <main>{children}</main>
+    </nav>
   )
-}
 
-export const query = graphql`
-  query {
-    # site {
-    #   siteMetadata {
-    #     title
-    #   }
-    # }
-    file(relativePath: { eq: "icon.png" }) {
-      childImageSharp {
-        fixed(width: 75, height: 75) {
-          ...GatsbyImageSharpFixed
+  export const query = graphql`
+    query {
+      # site {
+      #   siteMetadata {
+      #     title
+      #   }
+      # }
+      file(relativePath: { eq: "icon.png" }) {
+        childImageSharp {
+          fixed(width: 75, height: 75) {
+            ...GatsbyImageSharpFixed
+          }
         }
       }
     }
-  }
-`
+  `
+}

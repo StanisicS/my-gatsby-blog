@@ -5,6 +5,7 @@ import Layout from "../components/layout"
 
 export default () => (
   <Layout>
+    <SEO title="Contact" />
     <div style={{ color: `teal` }}>
       <Link to="/">Home</Link>
       <Header headerText="Contact" />

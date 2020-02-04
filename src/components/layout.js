@@ -1,7 +1,7 @@
 import React from "react"
 // import { css } from "@emotion/core"
 import { useStaticQuery, Link, graphql } from "gatsby"
-// import Img from "gatsby-image"
+import Img from "gatsby-image"
 // import { rhythm } from "../utils/typography"
 import SEO from "../components/seo"
 

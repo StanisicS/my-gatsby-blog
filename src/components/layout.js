@@ -5,12 +5,6 @@ import { Link, graphql } from "gatsby"
 // import { rhythm } from "../utils/typography"
 // import SEO from "../components/seo"
 
-// const Link = props => (
-//   <li style={{ display: `inline-block`, marginRight: `1rem` }}>
-<Link to={props.to}>{props.children}</Link>
-//   </li>
-// )
-
 export default ({ data }) => (
   <div
     css={css`

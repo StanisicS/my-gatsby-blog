@@ -31,7 +31,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-postcss`,
       options: {
-        // Accepts all options defined by `gatsby-plugin-postcss` plugin.
+        postCssPlugins: [require("tailwindcss"), require("autoprefixer")],
       },
     },
     {
@@ -56,5 +56,13 @@ module.exports = {
     },
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-purgecss`,
+      options: {
+        printRejected: false,
+        develop: false,
+        tailwind: true,
+      },
+    },
   ],
 }

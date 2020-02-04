@@ -24,46 +24,47 @@ export default () => {
     }
   `)
 
-  return
-  ;<div
-    // css={css`
-    //     box-sizing: border-box;
-    //     margin: 0 auto;
-    //     max-width: 700px;
-    //     padding: 0 ${rhythm(1)};
-    //     /* padding-top: ${rhythm(1.5)}; */
-    //   `}
-    style={{ margin: `3rem auto`, maxWidth: 650, padding: `0 1rem` }}
-  >
-    <header
+  return (
+    <div
       // css={css`
-      //     width: 100%;
-      //     /* margin-bottom: ${rhythm(1)}; */
-      //     background-color: #554A35;
-      //     padding-left: 0;
-      //     /* padding-right: 10px; */
-      //     display: flex;
-      //     justify-content: space-between;
-      //     align-items: center;
+      //     box-sizing: border-box;
+      //     margin: 0 auto;
+      //     max-width: 700px;
+      //     padding: 0 ${rhythm(1)};
+      //     /* padding-top: ${rhythm(1.5)}; */
       //   `}
-      style={{ marginBottom: `1.5rem` }}
+      style={{ margin: `3rem auto`, maxWidth: 650, padding: `0 1rem` }}
     >
-      <Link to="/" style={{ textShadow: `none`, backgroundImage: `none` }}>
-        <h3 style={{ display: `inline` }}>
-          <div>
-            <Img fixed={data.file.childImageSharp.fixed} />
-          </div>
-        </h3>
-      </Link>
-      <ul
-        //
-        style={{ listStyle: `none`, float: `right` }}
+      <header
+        // css={css`
+        //     width: 100%;
+        //     /* margin-bottom: ${rhythm(1)}; */
+        //     background-color: #554A35;
+        //     padding-left: 0;
+        //     /* padding-right: 10px; */
+        //     display: flex;
+        //     justify-content: space-between;
+        //     align-items: center;
+        //   `}
+        style={{ marginBottom: `1.5rem` }}
       >
-        <ListLink to="/">Home</ListLink>
-        <ListLink to="/about/">About</ListLink>
-        <ListLink to="/contact/">Contact</ListLink>
-      </ul>
-    </header>
-    {children}
-  </div>
+        <Link to="/" style={{ textShadow: `none`, backgroundImage: `none` }}>
+          <h3 style={{ display: `inline` }}>
+            <div>
+              <Img fixed={data.file.childImageSharp.fixed} />
+            </div>
+          </h3>
+        </Link>
+        <ul
+          //
+          style={{ listStyle: `none`, float: `right` }}
+        >
+          <ListLink to="/">Home</ListLink>
+          <ListLink to="/about/">About</ListLink>
+          <ListLink to="/contact/">Contact</ListLink>
+        </ul>
+      </header>
+      {children}
+    </div>
+  )
 }

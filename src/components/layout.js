@@ -21,15 +21,17 @@ export default ({ children }) => {
         box-sizing: border-box;
         margin: 0 auto;
         max-width: 700px;
-        padding: ${rhythm(1.5)};
-        padding-top: ${rhythm(1.5)};
+        padding: 0 ${rhythm(1)};
+        /* padding-top: ${rhythm(1.5)}; */
       `}
     >
       <header
         css={css`
           width: 100%;
+          /* margin-bottom: ${rhythm(1)}; */
           background-color: darkgreen;
-          padding-right: 10px;
+         padding-left: 0;
+          /* padding-right: 10px; */
           display: flex;
           justify-content: space-between;
           align-items: center;
@@ -46,16 +48,9 @@ export default ({ children }) => {
               display: flex;
             `}
           >
-            <Link
-              to={"/"}
-              style={{
-                display: "inlineBlock",
-                padding: "10px 15px",
-              }}
-            >
+            <Link to={"/"} style={{ paddingLeft: "0" }}>
               <h3
                 css={css`
-                  margin-bottom: ${rhythm(2)};
                   display: inline-block;
                   font-style: normal;
                 `}

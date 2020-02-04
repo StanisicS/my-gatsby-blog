@@ -7,6 +7,7 @@ import Layout from "../components/layout"
 export default ({ data }) => {
   return (
     <Layout>
+      <SEO title="Home" />
       <div>
         <h1
           css={css`

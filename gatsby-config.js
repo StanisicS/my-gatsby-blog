@@ -5,7 +5,7 @@ module.exports = {
     author: `Stevan Stanisic`,
   },
   plugins: [
-{
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
@@ -19,8 +19,8 @@ module.exports = {
         path: `${__dirname}/src/`,
       },
     },
-`gatsby-plugin-sharp`,
-`gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     `gatsby-transformer-remark`,
     `gatsby-plugin-emotion`,
     {

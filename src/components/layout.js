@@ -1,100 +1,51 @@
 import React from "react"
-import { css } from "@emotion/core"
+// import { css } from "@emotion/core"
 import { Link, graphql } from "gatsby"
-import Img from "gatsby-image"
-import { rhythm } from "../utils/typography"
-export default ({ data }) => (
-  <div
-    css={css`
-        box-sizing: border-box;
-        margin: 0 auto;
-        max-width: 700px;
-        padding: 0 ${rhythm(1)};
-        /* padding-top: ${rhythm(1.5)}; */
-      `}
-  >
-    <header
-      css={css`
-          width: 100%;
-          /* margin-bottom: ${rhythm(1)}; */
-          background-color: #554A35;
-          padding-left: 0;
-          /* padding-right: 10px; */
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-        `}
-    >
-      <ul
-        css={css`
-          list-style: none;
-          display: flex;
-        `}
-      >
-        <li
-          css={css`
-            display: flex;
-          `}
-        >
-          <Link to={"/"} style={{ paddingLeft: "0", paddingTop: "10px" }}>
-            <Img
-              fixed={data.file.childImageSharp.fixed}
-              // css={css`
-              //   display: inline-block;
-              //   font-style: normal;
-              // `}
-            />
-          </Link>
-        </li>
-        <li
-          css={css`
-            display: flex;
-          `}
-        >
-          <Link
-            to={"/about/"}
-            style={{
-              display: "inlineBlock",
-              padding: "10px 15px",
-              textDecoration: "none",
-              color: "white",
-            }}
-          >
-            About
-          </Link>
-        </li>
-        <li
-          css={css`
-            display: flex;
-          `}
-        >
-          <Link
-            to={"/contact/"}
-            style={{
-              display: "inlineBlock",
-              padding: "10px 15px",
-              textDecoration: "none",
-              color: "white",
-            }}
-          >
-            Contact
-          </Link>
-        </li>
-      </ul>
-    </header>
-  </div>
+// import Img from "gatsby-image"
+// import { rhythm } from "../utils/typography"
+
+const ListLink = props => (
+  <li style={{ display: `inline-block`, marginRight: `1rem` }}>
+    <Link to={props.to}>{props.children}</Link>
+  </li>
 )
 
-export const query = graphql`
-  query {
-    file(relativePath: { eq: "icon.png" }) {
-      childImageSharp {
-        # Specify the image processing specifications right in the query.
-        # Makes it trivial to update as your page's design changes.
-        fixed(width: 80, height: 80) {
-          ...GatsbyImageSharpFixed
-        }
-      }
-    }
-  }
-`
+export default ({ children }) => (
+  <div
+    // css={css`
+    //     box-sizing: border-box;
+    //     margin: 0 auto;
+    //     max-width: 700px;
+    //     padding: 0 ${rhythm(1)};
+    //     /* padding-top: ${rhythm(1.5)}; */
+    //   `}
+    style={{ margin: `3rem auto`, maxWidth: 650, padding: `0 1rem` }}
+  >
+    <header
+      // css={css`
+      //     width: 100%;
+      //     /* margin-bottom: ${rhythm(1)}; */
+      //     background-color: #554A35;
+      //     padding-left: 0;
+      //     /* padding-right: 10px; */
+      //     display: flex;
+      //     justify-content: space-between;
+      //     align-items: center;
+      //   `}
+      style={{ marginBottom: `1.5rem` }}
+    >
+      <Link to="/" style={{ textShadow: `none`, backgroundImage: `none` }}>
+        <h3 style={{ display: `inline` }}>My Gatsby Blog</h3>
+      </Link>
+      <ul
+        //
+        style={{ listStyle: `none`, float: `right` }}
+      >
+        <ListLink to="/">Home</ListLink>
+        <ListLink to="/about/">About</ListLink>
+        <ListLink to="/contact/">Contact</ListLink>
+      </ul>
+    </header>
+    {children}
+  </div>
+)

@@ -50,9 +50,8 @@ export default () => {
       >
         <Link to="/" style={{ textShadow: `none`, backgroundImage: `none` }}>
           <h3 style={{ display: `inline` }}>
-            <div>
-              <Img fixed={data.file.childImageSharp.fixed} />
-            </div>
+            <Img fixed={data.file.childImageSharp.fixed} />
+            My Gatsby Blog
           </h3>
         </Link>
         <ul

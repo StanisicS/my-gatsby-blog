@@ -1,8 +1,8 @@
 import React from "react"
-// import { css } from "@emotion/core"
-import { Link, graphql } from "gatsby"
+import { css } from "@emotion/core"
+import { useStaticQuery, Link, graphql } from "gatsby"
 // import Img from "gatsby-image"
-// import { rhythm } from "../utils/typography"
+import { rhythm } from "../utils/typography"
 
 const ListLink = props => (
   <li style={{ display: `inline-block`, marginRight: `1rem` }}>
@@ -10,42 +10,56 @@ const ListLink = props => (
   </li>
 )
 
-export default ({ children }) => (
-  <div
-    // css={css`
-    //     box-sizing: border-box;
-    //     margin: 0 auto;
-    //     max-width: 700px;
-    //     padding: 0 ${rhythm(1)};
-    //     /* padding-top: ${rhythm(1.5)}; */
-    //   `}
-    style={{ margin: `3rem auto`, maxWidth: 650, padding: `0 1rem` }}
-  >
-    <header
+export default ({ children }) => {
+  const data = useStaticQuery(
+    graphql`
+      query {
+        site {
+          siteMetadata {
+            title
+          }
+        }
+      }
+    `
+  )
+
+  return (
+    <div
       // css={css`
-      //     width: 100%;
-      //     /* margin-bottom: ${rhythm(1)}; */
-      //     background-color: #554A35;
-      //     padding-left: 0;
-      //     /* padding-right: 10px; */
-      //     display: flex;
-      //     justify-content: space-between;
-      //     align-items: center;
+      //     box-sizing: border-box;
+      //     margin: 0 auto;
+      //     max-width: 700px;
+      //     padding: 0 ${rhythm(1)};
+      //     /* padding-top: ${rhythm(1.5)}; */
       //   `}
-      style={{ marginBottom: `1.5rem` }}
+      style={{ margin: `3rem auto`, maxWidth: 650, padding: `0 1rem` }}
     >
-      <Link to="/" style={{ textShadow: `none`, backgroundImage: `none` }}>
-        <h3 style={{ display: `inline` }}>My Gatsby Blog</h3>
-      </Link>
-      <ul
-        //
-        style={{ listStyle: `none`, float: `right` }}
+      <header
+        // css={css`
+        //     width: 100%;
+        //     /* margin-bottom: ${rhythm(1)}; */
+        //     background-color: #554A35;
+        //     padding-left: 0;
+        //     /* padding-right: 10px; */
+        //     display: flex;
+        //     justify-content: space-between;
+        //     align-items: center;
+        //   `}
+        style={{ marginBottom: `1.5rem` }}
       >
-        <ListLink to="/">Home</ListLink>
-        <ListLink to="/about/">About</ListLink>
-        <ListLink to="/contact/">Contact</ListLink>
-      </ul>
-    </header>
-    {children}
-  </div>
-)
+        <Link to="/" style={{ textShadow: `none`, backgroundImage: `none` }}>
+          <h3 style={{ display: `inline` }}>{data.site.siteMetadata.title}</h3>
+        </Link>
+        <ul
+          //
+          style={{ listStyle: `none`, float: `right` }}
+        >
+          <ListLink to="/">Home</ListLink>
+          <ListLink to="/about/">About</ListLink>
+          <ListLink to="/contact/">Contact</ListLink>
+        </ul>
+      </header>
+      {children}
+    </div>
+  )
+}

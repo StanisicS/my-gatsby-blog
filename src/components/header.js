@@ -45,23 +45,23 @@ function Header({ siteTitle }) {
       >
         <div className="text-sm lg:flex-grow">
           <Link
-            to={`/page-2`}
-            href="#responsive-header"
+            to={`/about`}
+            // href="#responsive-header"
             className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"
           >
-            Docs
+            About
           </Link>
           <Link
-            to={`/page-2`}
+            to={`/contact`}
             className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"
           >
             Examples
           </Link>
           <Link
-            to={`/page-2`}
+            to={`/my-files`}
             className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white"
           >
-            Blog
+            My Files
           </Link>
         </div>
         <div>
@@ -69,7 +69,7 @@ function Header({ siteTitle }) {
             href="#download"
             className="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0"
           >
-            Download
+            Register
           </a>
         </div>
       </div>

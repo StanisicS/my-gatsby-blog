@@ -4,7 +4,6 @@ import { useStaticQuery, graphql } from "gatsby"
 import tw from "tailwind.macro"
 import styled from "@emotion/styled"
 import Header from "./header"
-import "./layout.css"
 
 // const PageContainer = styled.div`
 //   ${tw`container mx-auto`}
